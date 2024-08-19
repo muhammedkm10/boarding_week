@@ -1,24 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
-
+import Child1 from "./components/child1";
+import React, { Children } from "react";
+import Provider_component from "./components/context";
+import Chilld2 from "./components/Chilld2";
+import Child3 from "./components/Child3";
+import { Provider } from "react-redux";
+import store from "./components/store";
+import Child4 from "./components/Child4";
 function App() {
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <Provider_component>
+         <Child1 />
+         <h1>halo</h1>
+
+    </Provider_component>
+
+    <Chilld2></Chilld2>
+    <Provider store={store}>
+      
+    <Child3/>
+    <Child4/>
+    </Provider>
+    
+        </>
+    
   );
 }
 
